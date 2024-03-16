@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <p id="loginLink">Click here to login</p>
+
+    <script>
+        // Lấy redirect URL từ query parameter nếu có
+        const redirectUrl = `http://localhost:8000/`
+
+        // Chuyển hướng đến trang frontend 3306 (fe) và đính kèm redirect URL vào địa chỉ
+        document.getElementById('loginLink').addEventListener('click', function() {
+            window.location.href = `http://localhost:3006/?redirect_uri=${encodeURIComponent(redirectUrl)}`;
+        });
+    </script>
+</body>
+</html>
